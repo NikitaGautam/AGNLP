@@ -1,0 +1,103 @@
+
+{% include "header.html" %}
+
+{% block body %}
+
+   <!-- Page Heading -->
+   <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">DOWNLOADS PAGE</h1>
+
+    </div>
+
+    {% for file in files %}
+    <!-- Content Row -->
+    <div class="row" style="width: 100%;">
+        {% set name = file.split("/")[-1] %}
+        <a href="{{ url_for('download_file', filename=name) }}" download> 
+            
+            <button  type="button" class="btn btn-primary btn-lg btn-block">Download {{name}}</button>
+        </a>
+    
+    </div>
+    <br/>
+
+    {% endfor %}
+<!--     
+    <div>
+        <br/>
+    </div>
+
+    <div class="row"  style="width: 100%;">
+
+    <a href="{{ url_for('download_file', filename=file2_path) }}" download>
+        <button  type="button" class="btn btn-primary btn-lg btn-block"> Selected Scopus</button>
+    </a>
+
+    </div>
+    <div>
+        <br/>
+    </div>
+
+    <div class="row" style="width: 100%;">
+        <a href="{{ url_for('download_file', filename=file5_path) }}" download> 
+            <button  type="button" class="btn btn-primary btn-lg btn-block"> Science Direct All</button>
+        </a>
+        
+    
+    
+    </div>
+    <div>
+        <br/>
+    </div>
+
+    <div class="row"  style="width: 100%;">
+
+    <a href="{{ url_for('download_file', filename=file6_path) }}" download>
+        <button  type="button" class="btn btn-primary btn-lg btn-block"> Selected Science Direct </button>
+    </a>
+
+    </div>
+
+    <div>
+        <br/>
+    </div>
+
+    <div class="row"  style="width: 100%;">
+
+    <a href="{{ url_for('download_file', filename=file3_path) }}" download>
+        <button  type="button" class="btn btn-primary btn-lg btn-block"> All Google Scholar </button>
+    </a>
+
+    </div>
+
+    <br/>
+    
+    <div class="row"  style="width: 100%;">
+    <a href="{{ url_for('download_file', filename=file4_path) }}" download>
+        <button  type="button" class="btn btn-primary btn-lg btn-block"> Selected Google Scholar </button>
+    </a>
+
+    </div>
+
+    <br/>
+
+
+    <div class="row"  style="width: 100%;">
+
+    <a href="{{ url_for('download_file', filename=combined_all) }}" download>
+        <button  type="button" class="btn btn-success btn-lg btn-block"> Final Selected Files from All Sources </button>
+    </a>
+
+    </div> -->
+
+
+  <!-- Include -->
+
+<div style="height:450px;">
+
+</div>
+    
+{% include "footer.html" %}
+
+
+{% endblock %}

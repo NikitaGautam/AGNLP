@@ -1,0 +1,250 @@
+
+{% include "header.html" %}
+<style>
+
+        /*********************
+        TOOLTIP CSS
+        *********************/
+
+        /* Tooltip attribute */
+        [data-tooltip] {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        }
+
+        /* Tooltip content hidden by default */
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+        transition: all 1.3s ease-in-out;
+        visibility: hidden;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        pointer-events: none;
+        }
+
+        /* Tooltip position */
+        [data-tooltip]:before {
+        position: absolute;
+        bottom: 130%;
+        left: 40%;
+        margin-bottom: 5px;
+        margin-left: -80px;
+        padding: 12px;
+        width: 600px;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        background-color: #FFFFFF;
+        background-color: hsl(0,0%,100%, 0.9);
+        color: darkred;
+        content: attr(data-tooltip);
+        text-align: center;
+        font-size: 15px;
+        line-height: 21px;
+        }
+
+        /* Triangle hack for Tooltip bubble */
+        [data-tooltip]:after {
+        position: absolute;
+        bottom: 130%;
+        left: 50%;
+        margin-left: -5px;
+        width: 0;
+        border-top: 5px solid #FFFFFF;
+        border-top: 5px solid hsl(0,0%,100%, 0.9);
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        content: " ";
+        font-size: 0;
+        line-height: 0;
+        }
+
+        /* Tooltip visible on hover */
+        [data-tooltip]:hover:before,
+        [data-tooltip]:hover:after {
+        transition: all 1.3s ease-in-out;
+        visibility: visible;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        }
+
+
+</style>
+
+
+<style>
+    .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #7983ff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+        display: none; /* Initially hidden */
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<script>
+    function showLoading() {
+        // document.getElementById('spinner').style.display = 'block';
+        $('#loadingModal').modal('show');
+        document.getElementById('spinner').style.display = 'block';
+    }
+</script>
+
+
+    <!-- Button to trigger the modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#errorModal" style="display: none;">
+        Launch Error Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% if error %}
+                        <p>{{ error }}</p>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (jQuery is required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to trigger the modal -->
+    <script>
+        $(document).ready(function() {
+            {% if error %}
+                $('#errorModal').modal('show');
+            {% endif %}
+        });
+    </script>
+
+
+<div class="modal" id="loadingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Collecting and Filtering Data</p>
+                <div id="spinner" class="spinner"></div>
+                
+                <!-- <p>Loading...</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% block body %}
+   <!-- Page Heading -->
+   <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800" style="color: darkred !important;">Data Collector From Search Engines</h1>
+
+    </div>
+        <form action="{{url_for('keysearch') }}" method="post" onsubmit="showLoading()">
+
+             <!-- Keyword -->
+             <div class="form-group">
+                <label class="form-label" for="keyword">Enter Keyword for Search: 
+                    <a href="#" data-tooltip="Keyword"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="text" id="keyword" name="keyword" class="form-control" placeholder="Enter the keyword you would like to search in the search engines."  />
+            </div>
+
+               <!-- Alias -->
+               <div class="form-group">
+                <label class="form-label" for="alias">Alias For Search: 
+                    <a href="#" data-tooltip="alias"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="text" id="alias" name="alias" class="form-control" placeholder="For example: beans-keyword"  />
+            </div>
+
+            <!-- Number of Articles Scopus -->
+               <div class="form-group">
+                <label class="form-label" for="scopus">Number of Scopus Papers: 
+                    <a href="#" data-tooltip="Scopus Total"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="Number"  step="1" id="scopus" name="scopus" class="form-control"  value="0" min="0" max="5000" placeholder="Enter the number of papers to collect from scopus (max 5000)"  />
+             
+            </div>
+
+                  <!-- Number of Articles Science Direct -->
+            <div class="form-group">
+                <label class="form-label" for="science">Number of ScienceDirect Papers: 
+                    <a href="#" data-tooltip="ScienceDirect Total"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="Number"  step="1" id="science" name="science" class="form-control"  value="0" min="0" max="5000" placeholder="Enter the number of papers to collect from ScienceDirect (max 5000)"  />
+             
+            </div>
+
+                    <!-- Number of Articles WOS  -->
+                    <div class="form-group">
+                    <label class="form-label" for="wos">Record Count/Per Page of WOS Papers (0-100): 
+                        <a href="#" data-tooltip="Web Of Science Total"><span><i class="fas fa-info-circle"></i></span></a>
+                    </label>
+                    <input type="Number"  step="1" id="wos" name="wos" class="form-control" value="0" min="0" max="100" placeholder="Enter the number of papers to collect from Web Of Science in one iteration (0-100)"  />
+                    
+                </div>
+
+            <div class="form-group">
+            <label  class="form-label" for="option">
+                Do you want to use google scholar?
+                <a href="#" data-tooltip="Do you want to use google scholar?"><span><i class="fas fa-info-circle"></i></span></a>
+            </label><br>
+            <input type="radio" name="option" value="1"> Yes<br>
+            <input type="radio" name="option" value="0" checked> No<br><br>
+            </div>
+
+              <!-- Start Year Scholar -->
+              <div class="form-group">
+                <label class="form-label" for="start">Start Year - Google Scholar: 
+                    <a href="#" data-tooltip="Start Year"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="Number" value="2023"  step="1" id="start" name="start" class="form-control" placeholder="Enter the year from which you would like to collect data in (eg: 2014)"  />
+             
+            </div>
+
+
+            <!-- Start Year Scholar -->
+                <div class="form-group">
+                <label class="form-label" for="end">End Year - Google Scholar: 
+                    <a href="#" data-tooltip="Start Year"><span><i class="fas fa-info-circle"></i></span></a>
+                </label>
+                <input type="Number" value="2024" step="1" id="end" name="end" class="form-control" placeholder="Enter the year till which you would like to collect data (eg: 2020)"  />
+                
+            </div>
+
+          
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-success btn-block mb-4">COLLECT</button>
+          </form>
+
+
+
+{% endblock %}
+
+{% include "footer.html" %}

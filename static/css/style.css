@@ -1,0 +1,485 @@
+ .dash-cards {
+      font-size: large;
+  }
+
+  .form-label{
+      color: black;
+      font-weight: 600;
+  }
+
+  .nav-item {
+      font-size: xx-large;
+  }
+
+.text-gray-800 {
+    color: black !important;
+}
+
+#predictionblock {
+    color: black;
+    text-align: center;
+    border: 3px solid darkred;
+    background-color: white;
+
+}
+
+
+/* ------ */
+
+
+
+#map-legend {
+    height: 2em;
+}
+
+div.left-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div#station-info {
+    margin: 0 0 1em 0;
+}
+#meta {
+    text-decoration: none;
+}
+
+div#station-name {
+    border-radius: 3px 3px 0 0;
+    background-color: #4e73df;;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+div#station-data {
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #D3D3D3;
+    /* background-image: url(/client/png/dots.20150322.png); */
+    background-repeat: repeat;
+}
+
+[data-padding="small"], [data-padding-left="small"], [data-padding-left-right="small"] {
+    padding-left: 0.25em;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+colgroup {
+    display: table-column-group;
+}
+
+.width {
+    width: 100%;
+}
+.small {
+    font-size: 0.875em;
+}
+
+div#station-map-select {
+    margin-top: 1em;
+}
+
+.daily tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#station-data table tr, #station-data table td {
+    cursor: default;
+}
+#station-data td {
+    padding: 0 0 0.25em 0.5em;
+}
+#station-data  td.bold {
+    font-weight: bold;
+}
+
+#station-data  td {
+    margin: 0;
+    padding: 0;
+}
+.nowrap td {
+    cursor: default;
+}
+
+#station-data tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+#station-data td {
+    padding: 0 0 0.25em 0.5em;
+}
+
+td.bold {
+    font-weight: bold;
+}
+
+div#station-map-select {
+    margin-top: 1em;
+}
+
+
+div#station-map-select select, div#station-map-select div {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+.large {
+    font-size: 1.125em;
+}
+
+.center {
+    text-align: center;
+}
+.xsmall {
+    font-size: 0.75em;
+}
+.block {
+    position: relative;
+    display: block;
+}
+a[role="note"] {
+    padding: 0.5em 1em;
+    background-color: #EDE6F7;
+    color:  #7191f1;
+}
+
+
+#tabs {
+    position: relative;
+}
+
+.large {
+    font-size: 1.125em;
+}
+
+#tabs>div {
+    background-color: #EEEDE9;
+    color: #777777;
+    cursor: pointer;
+    /* font-size: 1.125em; */
+    padding: 0.5em;
+    margin: 0px 3px 1px 5px;
+    border-radius: 5px 0 0 5px;
+    text-align: right;
+    
+    
+}
+
+#map-legend {
+    height: 2em;
+}
+
+#cci-legend table, #chart-legend table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cci-legend table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#cci-legend table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+
+#cci-legend table tbody tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+
+#cci-legend td {
+    color: black;
+}
+
+#cci-legend td, #chart-legend td {
+    width: 3em;
+    height: 1em;
+    text-align: center;
+    font-weight: bold;
+    cursor: default;
+    font-size: .875em;
+}
+
+#cci-legend tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+/* .ext-stress-cold {   
+     background-color: #843094;
+}
+.sev-stress-cold {   
+     background-color: #3700b2;
+}
+
+.mod-stress-cold { 
+     background-color: #0000ff;
+}
+
+.mild-stress-cold {   
+     background-color: #00785f;
+}
+
+.no-stress {   
+    background-color: #08b30f;
+}
+
+.mild-stress-heat {  
+     background-color: #ffff00;
+}
+
+.mod-stress-heat {  
+     background-color: #ffad00;
+}
+.sev-stress-heat {   
+     background-color: #ff5400;
+}
+.ext-stress-heat {   
+    background-color: #ff0000;
+} */
+
+.stress {
+    color: white;
+    background-color: red;
+}
+
+
+
+div.center-content {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+}
+
+#lower-pane {
+    border: 2px solid #7137BD;
+    padding: 3px;
+    margin-bottom: 1.5em;
+}
+
+.tab-content {
+    display: none;
+    min-height: 50vh;
+}
+
+.selected-tab-content {
+    display: block;
+}
+
+h4[role="heading"] {
+    padding: 0.5em 1em;
+    background-color: #EEEDE9;
+}
+
+#table-tab-content table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table[role="grid"] > thead {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #FFF;
+}
+
+
+/* -- */
+
+div.center-content-right {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+
+div#map-title {
+    font-size: 1 em;
+    text-align: center;
+}
+
+.center-content-right div#map-overlays {
+    height: 425px;
+    margin-bottom: 0;
+}
+
+div#map-overlays {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+.block {
+    position: relative;
+    display: block;
+}
+.top {
+    position: absolute;
+    top: 0;
+
+}
+
+.mapimage {
+
+    margin-left: 3%;
+    /* margin-top:6%; */
+    background: #858796;
+    width: 100%;
+}
+
+.small {
+    font-size: 0.5 em;
+    color: darkred;
+}
+
+
+.ext-stress-cold {   
+    background-color: #CBC3E3;
+}
+.sev-stress-cold {   
+    background-color: #E6E6FA;
+}
+
+.mod-stress-cold { 
+    background-color: #5D3FD3;
+}
+
+.mild-stress-cold {   
+    background-color: #483248;
+}
+
+.no-stress {   
+   background-color: #301934;
+}
+
+.mild-stress-heat {  
+    background-color: #AA336A;
+}
+
+.mod-stress-heat {  
+    background-color: #702963;
+}
+.sev-stress-heat {   
+    background-color: #800020;
+}
+.ext-stress-heat {   
+   background-color: #9F2B68;
+}
+
+tr.station-highlight {
+    background-color: #9F2B68;
+    color: white;
+}
+
+
+[data-padding="medium"], [data-padding-left="medium"], [data-padding-left-right="medium"] {
+    padding-left: 0.5em;
+}
+
+span#station-name {
+    display: block;
+    width: 100%;
+    height: 2em;
+    background-color: #7191f1;
+    color: white;
+    padding: 0.5em;
+    border-radius: 3px 3px 0 0;
+    border-color: #7191f1;
+    text-align: center;
+}
+
+#meta {
+    text-decoration: none;
+}
+
+.station-display-heading {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.station-display-table {
+    text-align: center;
+    font-size: 1.1em;
+    width: 100%;
+    table-layout: fixed;
+}
+#station-display tr {
+    margin-top: 1px;
+}
+
+td.label-date {
+    border-bottom: none;
+}
+td.date-top-border {
+    border-top: solid 1px #aaa;
+}
+td.label-tod.day {
+    color: darkblue;
+}
+.station-display-table td {
+    padding: 0.1em;
+    border: solid 1px #aaa;
+}
+
+td.date-bottom-border {
+    border-bottom: solid 1px #aaa;
+}
+
+#station-display tr {
+margin-top: 1px;
+}
+
+td.date-bottom-border {
+    border-bottom: solid 1px #aaa;
+}
+
+td.label-tod.night {
+    background: #777;
+    color: white;
+}
+
+
+.onoffswitch {
+    position: relative;
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    vertical-align: middle;
+    margin: -3px 3px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.mapimage{
+    height: 360px;
+    width: 400px;
+    /* object-fit: contain; */
+}
