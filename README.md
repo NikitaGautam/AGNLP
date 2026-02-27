@@ -1,3 +1,9 @@
+This repository is part of the research project:
+
+# Leveraging Large Language Models for Automated Scalable Development of Open Scientific Databases
+
+If you use this code, models, or experimental pipeline in your research, please cite the paper.
+
 # FlaskApp — Literature Scraper + LLaMA-based Filtering (Scopus / ScienceDirect / Web of Science / Google Scholar)
 
 This project is a Flask web app that:
