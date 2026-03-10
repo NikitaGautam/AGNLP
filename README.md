@@ -6,6 +6,7 @@ If you use this code, models, or experimental pipeline in your research, please 
 
 https://arxiv.org/abs/2603.07050
 
+```bibtex
 @misc{gautam2026leveraginglargelanguagemodels,
       title={Leveraging Large Language Models for Automated Scalable Development of Open Scientific Databases}, 
       author={Nikita Gautam and Doina Caragea and Ignacio Ciampitti and Federico Gomez},
@@ -15,7 +16,7 @@ https://arxiv.org/abs/2603.07050
       primaryClass={cs.IR},
       url={https://arxiv.org/abs/2603.07050}, 
 }
-
+```
 
 # FlaskApp — Literature Scraper + LLaMA-based Filtering (Scopus / ScienceDirect / Web of Science / Google Scholar)
 
