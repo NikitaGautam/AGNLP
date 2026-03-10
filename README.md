@@ -4,6 +4,19 @@ This repository is part of the research project:
 
 If you use this code, models, or experimental pipeline in your research, please cite the paper.
 
+https://arxiv.org/abs/2603.07050
+
+@misc{gautam2026leveraginglargelanguagemodels,
+      title={Leveraging Large Language Models for Automated Scalable Development of Open Scientific Databases}, 
+      author={Nikita Gautam and Doina Caragea and Ignacio Ciampitti and Federico Gomez},
+      year={2026},
+      eprint={2603.07050},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2603.07050}, 
+}
+
+
 # FlaskApp — Literature Scraper + LLaMA-based Filtering (Scopus / ScienceDirect / Web of Science / Google Scholar)
 
 This project is a Flask web app that:
